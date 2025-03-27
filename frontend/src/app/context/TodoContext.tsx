@@ -35,7 +35,8 @@ export function TodoProvider({ children }: TodoProviderProps) {
       setError(null);
     } catch (err) {
       const error = err as AxiosError;
-      setError(error.response?.data?.error || error.message || 'An error occurred');
+      const errorMessage = (error.response?.data as { error?: string })?.error || error.message || 'An error occurred';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -51,7 +52,8 @@ export function TodoProvider({ children }: TodoProviderProps) {
       return response.data;
     } catch (err) {
       const error = err as AxiosError;
-      setError(error.response?.data?.error || error.message || 'An error occurred');
+      const errorMessage = (error.response?.data as { error?: string })?.error || error.message || 'An error occurred';
+      setError(errorMessage);
       return null;
     } finally {
       setLoading(false);
@@ -70,7 +72,8 @@ export function TodoProvider({ children }: TodoProviderProps) {
       return response.data;
     } catch (err) {
       const error = err as AxiosError;
-      setError(error.response?.data?.error || error.message || 'An error occurred');
+      const errorMessage = (error.response?.data as { error?: string })?.error || error.message || 'An error occurred';
+      setError(errorMessage);
       return null;
     } finally {
       setLoading(false);
@@ -87,7 +90,8 @@ export function TodoProvider({ children }: TodoProviderProps) {
       return true;
     } catch (err) {
       const error = err as AxiosError;
-      setError(error.response?.data?.error || error.message || 'An error occurred');
+      const errorMessage = (error.response?.data as { error?: string })?.error || error.message || 'An error occurred';
+      setError(errorMessage);
       return false;
     } finally {
       setLoading(false);
