@@ -11,7 +11,7 @@ interface TodoProviderProps {
   children: ReactNode;
 }
 
-export function TodoProvider({ children }: TodoProviderProps): JSX.Element {
+export function TodoProvider({ children }: TodoProviderProps) {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
