@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
-import { FieldValues, UseFormReturn } from "react-hook-form";
+import { FieldValues, UseFormReturn, Path } from "react-hook-form";
 
 interface FormFieldWrapperProps<T extends FieldValues> {
   form: UseFormReturn<T>;
-  name: keyof T & string;
+  name: Path<T>;
   label: string;
   placeholder: string;
   inputType?: "input" | "textarea";
