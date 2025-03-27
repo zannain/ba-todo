@@ -32,7 +32,7 @@ server.get('/health', async (request, reply) => {
 // Start the server
 const start = async (): Promise<void> => {
   try {
-    const port = parseInt(process.env.PORT || '5000', 10);
+    const port = parseInt(process.env.PORT || '5001', 10);
     await server.listen({ port, host: '0.0.0.0' });
     server.log.info(`Server listening on ${port}`);
   } catch (err) {
