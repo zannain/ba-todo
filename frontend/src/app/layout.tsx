@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Todo App',
-  description: 'A Todo application built with Next.js, Fastify and MongoDB',
+  description: 'Blue Agilis To-dos',
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen bg-background">
         <TodoProvider>
           {children}
         </TodoProvider>

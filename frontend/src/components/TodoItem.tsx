@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, ChangeEvent } from 'react';
-import { useTodos } from '../context/TodoContext';
-import { Todo } from '../types';
+import { useTodos } from '../app/context/TodoContext';
+import { Todo } from '../app/types';
 
 interface TodoItemProps {
   todo: Todo;
@@ -40,9 +40,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   };
 
   const handleDelete = (): void => {
-    if (window.confirm('Are you sure you want to delete this todo?')) {
       deleteTodo(todo._id);
-    }
   };
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>): void => {

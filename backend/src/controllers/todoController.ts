@@ -76,7 +76,6 @@ export const updateTodo = async (request: UpdateTodoRequest, reply: FastifyReply
 export const deleteTodo = async (request: DeleteTodoRequest, reply: FastifyReply): Promise<void> => {
   try {
     const todo = await Todo.findById(request.params.id);
-
     if (!todo) {
       reply.code(404).send({ error: 'Todo not found' });
       return;

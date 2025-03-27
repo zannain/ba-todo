@@ -1,6 +1,6 @@
 import fastify, { FastifyInstance } from 'fastify';
 import { config } from 'dotenv';
-// import connectDB from './config/db';
+import cors from '@fastify/cors';
 import todoRoutes from './routes/todoRoutes';
 import mongooseConnector from './plugins/mongoose-connector';
 // Load env variables
@@ -11,12 +11,14 @@ const server: FastifyInstance = fastify({ logger: true });
 
 // Register plugins
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
-  credentials: true
+  origin: true, // This allows all origins in development
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  maxAge: 86400 // 24 hours
 };
 
 server.register(mongooseConnector)
-import cors from '@fastify/cors';
 server.register(cors, corsOptions);
 
 // Register routes
