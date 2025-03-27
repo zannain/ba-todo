@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/table";
 import { EditDialog } from "./EditDialog";
 import DeleteDialog from "./DeleteDialog";
-import { Checkbox } from "@/components/ui/checkbox";
 import { TodoCheckbox } from "./TodoCheckbox";
 
 const TodoList: React.FC = () => {
