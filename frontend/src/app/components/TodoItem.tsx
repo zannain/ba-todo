@@ -6,7 +6,7 @@ import { EditDialog } from "./EditDialog";
 import DeleteDialog from "./DeleteDialog";
 import { TodoCheckbox } from "./TodoCheckbox";
 import { Badge } from "./ui/badge";
-import { Todo } from "../app/types"; // Make sure to adjust this import based on your actual Todo type location
+import { Todo } from "../types"; // Make sure to adjust this import based on your actual Todo type location
 
 interface TodoItemProps {
   todo: Todo;
