@@ -1,8 +1,8 @@
 "use client";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import { useTodos } from "../app/context/TodoContext";
-import { Todo } from "../app/types";
+import { useTodos } from "../context/TodoContext";
+import { Todo } from "../types";
 import React from "react";
 
 interface TodoCheckboxProps {

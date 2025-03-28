@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useTodos } from "../app/context/TodoContext";
+import { useTodos } from "../context/TodoContext";
 import { Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {

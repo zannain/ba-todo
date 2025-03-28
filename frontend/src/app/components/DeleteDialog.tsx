@@ -9,7 +9,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useTodos } from "../app/context/TodoContext";
+import { useTodos } from "../context/TodoContext";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 
