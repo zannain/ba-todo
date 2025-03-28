@@ -6,7 +6,7 @@ BA Todo is a full-stack Todo application that includes a backend API and a front
 
 1. Install [Docker](https://www.docker.com/get-started) and Docker Compose
 2. Clone this repository
-3. Run `docker-compose up -d` in the root directory. The `-d` flag will spin up the application and run it in the background.
+3. Run `docker-compose up -d --build` in the root directory. The `-d` flag will spin up the application and run it in the background.
 4. Access the app at http://localhost:3000
 5. If you want to generate test data, run `docker-compose run backend npm run seed`
 
