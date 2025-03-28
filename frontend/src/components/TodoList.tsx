@@ -5,14 +5,11 @@ import { useTodos } from "../app/context/TodoContext";
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { EditDialog } from "./EditDialog";
-import DeleteDialog from "./DeleteDialog";
-import { TodoCheckbox } from "./TodoCheckbox";
+import { TodoItem } from "./TodoItem";
 
 const TodoList: React.FC = () => {
   const { todos, loading, error } = useTodos();
@@ -49,17 +46,7 @@ const TodoList: React.FC = () => {
         </TableHeader>
         <TableBody>
           {todos.map((todo) => (
-            <TableRow key={todo._id}>
-              <TableCell className="flex gap-2">
-                <TodoCheckbox todo={todo} />
-                {todo.title}
-                </TableCell>
-              <TableCell>{todo.description}</TableCell>
-              <TableCell className="flex space-x-2">
-                <DeleteDialog todoId={todo._id}></DeleteDialog>
-                <EditDialog todo={todo}></EditDialog>
-              </TableCell>
-            </TableRow>
+            <TodoItem key={todo._id} todo={todo} />
           ))}
         </TableBody>
       </Table>
